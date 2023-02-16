@@ -1,0 +1,10 @@
+﻿@model List<Laptop>;
+
+@foreach (Laptop l in Model)
+{
+    <ul>
+        <li>Model: @(l.Model)</li>
+        <li>Brand: @(l.Brand)</li>
+        <li>Price: @(l.Price)</li>
+    </ul>
+}
