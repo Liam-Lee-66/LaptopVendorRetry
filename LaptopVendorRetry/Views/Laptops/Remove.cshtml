@@ -1,0 +1,30 @@
+﻿@using LaptopVendorRetry.Models.ViewModels;
+@model RemoveLaptopViewModel;
+
+<form method="post">
+    <p>Select laptop to remove</p>
+    <input class="form-control" asp-for="SelectedLaptopId" />
+    <input type="submit" class="mt-1 mb-2 col-12 btn btn-primary" value="Remove" />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Model</th>
+                <th scope="col">Year</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Laptop l in Model.AllLaptops)
+            {
+                <tr>
+                    <td>@l.Id</td>
+                    <td>@l.Model</td>
+                    <td>@l.Year</td>
+                    <td>@l.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

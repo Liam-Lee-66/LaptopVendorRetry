@@ -1,10 +1,25 @@
 ﻿@model List<Laptop>;
 
-@foreach (Laptop l in Model)
-{
-    <ul>
-        <li>Model: @(l.Model)</li>
-        <li>Brand: @(l.Brand)</li>
-        <li>Price: @(l.Price)</li>
-    </ul>
-}
+<p>Add new laptop: <a asp-controller="Laptops" asp-action="Add">Click Here</a></p>
+<p>Remove laptop: <a asp-controller="Laptops" asp-action="Remove">Click Here</a></p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Model</th>
+            <th scope="col">Price</th>
+            <th scope="col">Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Laptop l in Model)
+        {
+            <tr>
+                <td>@l.Model</td>
+                <td>@l.Price</td>
+                <td>@l.Year</td>
+            </tr>
+        }
+    </tbody>
+</table>

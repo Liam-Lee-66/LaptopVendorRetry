@@ -1,0 +1,41 @@
+﻿@using LaptopVendorRetry.Models.ViewModels;
+@model AddLaptopViewModel;
+
+
+<form method="post">
+    <div class="col-12 d-flex flex-column justify-content-center">
+        <div class="col-12 d-flex flex-column mb-4">
+            <p>Laptop Model</p>
+            <input class="form-control" asp-for="Model">
+
+            <p>Price</p>
+            <input class="form-control" asp-for="Price">
+
+            <p>Year of Release</p> 
+            <input class="form-control" asp-for="Year">
+
+            <p>Select Brand by ID</p>
+            <input class="form-control" asp-for="BrandId">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Model</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Brand b in Model.AllBrands)
+                    {
+                        <tr>
+                            <td>@b.Id</td>
+                            <td>@b.Name</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <input type="submit" class="col-12 btn btn-primary" value="Create" />
+    </div>
+</form>
