@@ -1,0 +1,26 @@
+﻿@model int;
+
+@{
+    if (Model == 0)
+    {
+        // successfully added laptop
+        <p>Brand has been successfully added.</p>
+    }
+    else if (Model == 1)
+    {
+        // failed adding laptop
+        <p>Adding brand has failed.</p>
+        <p><a asp-controller="Brands" asp-action="Add">Click Here</a> to retry.</p>
+    }
+    else if (Model == 2)
+    {
+        // successfully removed laptop
+        <p>Brand has been successfully removed.</p>
+    }
+    else if (Model == 3)
+    {
+        // failed removing laptop
+        <p>Removing brand has failed.</p>
+        <p><a asp-controller="Brands" asp-action="Remove">Click Here</a> to retry.</p>
+    }
+}

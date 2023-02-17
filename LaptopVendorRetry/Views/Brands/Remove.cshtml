@@ -1,0 +1,26 @@
+﻿@using LaptopVendorRetry.Models.ViewModels;
+@model RemoveBrandViewModel;
+
+<form method="post">
+    <p>Select Brand by ID to remove</p>
+    <input class="form-control" asp-for="BrandId" />
+    <input type="submit" class="mt-1 mb-2 col-12 btn btn-primary" value="Remove" />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Brand b in Model.AllBrands)
+            {
+                <tr>
+                    <td>@b.Id</td>
+                    <td>@b.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
